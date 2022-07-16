@@ -2,8 +2,14 @@ name: Runner shell Commands
 on: [push]
 
 jobs:
-  run-shell-command:
+ job1:
     runs-on: ubuntu-latest
     steps:
       - name: Echo a String
         run: echo "Hello Securtiy Gurus!! This is our first github action"
+
+  job2:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Echo a String
+          run: echo "Hello Securtiy Gurus!! This is our first github action"
