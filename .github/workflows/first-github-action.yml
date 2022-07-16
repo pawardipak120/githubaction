@@ -10,6 +10,10 @@ jobs:
         run: echo "Hello Securtiy Gurus!! This is our first github action"
       - name: clone repo
         uses: actions/checkout@v3
+      - name: check the working directory
+        run: |
+          pwd
+          ls -la
 
  job2:
     name: job2
