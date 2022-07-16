@@ -18,8 +18,8 @@ jobs:
         run: sudo apt install nodejs npm
       - name: AWS CDK installation
         run: npm install -g aws-cdk
-      # - name: CDK test
-      #   run: cdk
+      - name: CDK CLODFORMATION OUTPUT
+        run: cdk synth --output=~/job1
       - name: upload the artifact
         uses: actions/upload-artifact@v3
         with:
@@ -37,6 +37,12 @@ jobs:
     steps:
       - name: Echo a String
         run: echo "Hello Securtiy Gurus!! This is our first github action"
+      - name: install the npm
+        run: sudo apt install nodejs npm
+      - name: AWS CDK installation
+        run: npm install -g aws-cdk
+      - name: CDK CLODFORMATION OUTPUT
+        run: cdk synth --output=~/job2
       - uses: actions/download-artifact@v3
         with:
           name: my-artifact  
