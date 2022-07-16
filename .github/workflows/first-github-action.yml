@@ -18,6 +18,8 @@ jobs:
         run: sudo apt install nodejs npm
       - name: AWS CDK installation
         run: npm install -g aws-cdk
+      - name: Dependency installation
+        run: npm install
       - name: CDK CLODFORMATION OUTPUT
         run: cdk synth --output=~/job1
       - name: upload the artifact
