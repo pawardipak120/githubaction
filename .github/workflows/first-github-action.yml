@@ -1,5 +1,8 @@
 name: Runner shell Commands
-on: [push]
+on: 
+  push:
+    - 'main'
+    - 'releases/**'
 
 jobs:
  job1:
@@ -10,6 +13,8 @@ jobs:
         run: echo "Hello Securtiy Gurus!! This is our first github action"
       - name: clone repo
         uses: actions/checkout@v3
+      - name: install the npm
+        run: sudo apt install nodejs npm
       - name: check the working directory
         run: |
           pwd
