@@ -1,8 +1,9 @@
 name: Runner shell Commands
 on: 
   push:
-    - 'main'
-    - 'releases/**'
+    branches:
+      - 'main'
+      - 'releases/**'
 
 jobs:
  job1:
