@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Echo a String
         run: echo "Hello Securtiy Gurus!! This is our first github action"
+      - name: clone repo
+        uses: actions/checkout@v3
 
  job2:
     name: job2
