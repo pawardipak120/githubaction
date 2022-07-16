@@ -20,6 +20,11 @@ jobs:
         run: npm install -g aws-cdk
       # - name: CDK test
       #   run: cdk
+      - name: upload the artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: /home/runner/work/githubaction/githubaction/*
       - name: check the working directory
         run: |
           pwd
@@ -32,5 +37,10 @@ jobs:
     steps:
       - name: Echo a String
         run: echo "Hello Securtiy Gurus!! This is our first github action"
-      - name: CDk
-        run: cdk
+      - uses: actions/download-artifact@v3
+        with:
+          name: my-artifact  
+      - name: check the working directory
+        run: pwd 
+      - name: Display structure of downloaded files
+        run: ls -R    
