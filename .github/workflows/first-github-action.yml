@@ -18,8 +18,8 @@ jobs:
         run: sudo apt install nodejs npm
       - name: AWS CDK installation
         run: npm install -g aws-cdk
-      - name: CDK test
-        run: cdk
+      # - name: CDK test
+      #   run: cdk
       - name: check the working directory
         run: |
           pwd
@@ -32,3 +32,5 @@ jobs:
     steps:
       - name: Echo a String
         run: echo "Hello Securtiy Gurus!! This is our first github action"
+      - name: CDk
+        run: cdk
