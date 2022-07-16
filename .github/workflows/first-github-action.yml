@@ -3,12 +3,15 @@ on: [push]
 
 jobs:
  job1:
+    name: job1
     runs-on: ubuntu-latest
     steps:
       - name: Echo a String
         run: echo "Hello Securtiy Gurus!! This is our first github action"
 
  job2:
+    name: job2
+    needs: job1
     runs-on: ubuntu-latest
     steps:
       - name: Echo a String
