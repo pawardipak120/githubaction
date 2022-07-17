@@ -21,7 +21,7 @@ jobs:
       - name: Dependency installation
         run: npm install
       - name: CDK CLODFORMATION OUTPUT
-        run: cdk synth --output=~/job1
+        run: cdk synth --output=job1
       - name: upload the artifact
         uses: actions/upload-artifact@v3
         with:
@@ -43,12 +43,15 @@ jobs:
         run: sudo apt install nodejs npm
       - name: AWS CDK installation
         run: npm install -g aws-cdk
-      - name: CDK CLODFORMATION OUTPUT
-        run: cdk synth --output=~/job2
       - uses: actions/download-artifact@v3
         with:
-          name: my-artifact  
+          name: my-artifact
       - name: check the working directory
         run: pwd 
       - name: Display structure of downloaded files
-        run: ls -R    
+        run: ls -R  
+      - name: CDK CLODFORMATION OUTPUT
+        run: cdk synth --output=job2
+      - name: Display structure of after cdk synth
+        run: ls -R 
+  
