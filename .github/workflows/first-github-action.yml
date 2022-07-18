@@ -50,6 +50,8 @@ jobs:
         run: pwd 
       - name: Display structure of downloaded files
         run: ls -R  
+      - name: run dependency
+        run: npm ci
       - name: CDK CLODFORMATION OUTPUT
         run: cdk synth --output=job2
       - name: Display structure of after cdk synth
