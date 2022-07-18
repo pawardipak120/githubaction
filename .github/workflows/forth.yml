@@ -22,3 +22,11 @@ jobs:
     steps:
     - name: ${{ github.event.inputs.job }} - step 1
       run: echo "${{ github.event.inputs.job }} triggered!"
+
+  pre-prod:
+    name: Deploy pre-prod-deploy
+    runs-on: ubuntu-latest
+    needs: dev-deploy
+    steps:
+    - name:  - step 1
+      run: echo  triggered!"
